@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GARD AR</title>
+
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+.info{
+    position:fixed;
+    bottom:20px;
+    left:0;
+    right:0;
+    text-align:center;
+    color:white;
+    z-index:999;
+    background:rgba(0,0,0,.5);
+    padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="info">
+کارت GARD را مقابل دوربین بگیرید
+</div>
+
+<a-scene
+mindar-image="imageTargetSrc: ./guard.mind;"
+color-space="sRGB"
+renderer="colorManagement: true, physicallyCorrectLights"
+vr-mode-ui="enabled: false"
+device-orientation-permission-ui="enabled: false">
+
+<a-assets>
+
+<img
+id="instagram"
+src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+
+</a-assets>
+
+<a-camera
+position="0 0 0"
+look-controls="enabled: false">
+</a-camera>
+
+<a-entity mindar-image-target="targetIndex: 0">
+
+<!-- کارت سفید -->
+
+<a-plane
+position="0 0.6 0"
+width="1.5"
+height="1"
+color="#FFFFFF"
+material="opacity:0.95">
+</a-plane>
+
+<!-- آیکون اینستاگرام -->
+
+<a-image
+src="#instagram"
+position="0 0.85 0.01"
+width="0.35"
+height="0.35">
+</a-image>
+
+<!-- نام پیج -->
+
+<a-text
+value="@Guard_co"
+align="center"
+color="#003B8E"
+position="0 0.45 0.02"
+width="4">
+</a-text>
+
+<!-- متن -->
+
+<a-text
+value="Follow us on Instagram"
+align="center"
+color="#555555"
+position="0 0.25 0.02"
+width="3">
+</a-text>
+
+</a-entity>
+
+</a-scene>
+
+</body>
+</html>
