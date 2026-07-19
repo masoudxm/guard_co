@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Guard AR</title>
+
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+</head>
+
+<body>
+
+<a-scene
+mindar-image="imageTargetSrc: guard.mind;"
+color-space="sRGB"
+embedded
+vr-mode-ui="enabled: false"
+device-orientation-permission-ui="enabled: false">
+
+<a-assets>
+
+<img id="insta"
+src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+
+</a-assets>
+
+<a-camera
+position="0 0 0"
+look-controls="enabled: false">
+</a-camera>
+
+<a-entity mindar-image-target="targetIndex: 0">
+
+<a-plane
+position="0 0.8 0"
+width="1.4"
+height="1"
+color="#ffffff">
+</a-plane>
+
+<a-image
+src="#insta"
+position="0 1.05 0.01"
+width="0.3"
+height="0.3">
+</a-image>
+
+<a-text
+value="@Guard_co"
+color="#003A8C"
+align="center"
+position="0 0.75 0.01"
+width="3">
+</a-text>
+
+</a-entity>
+
+</a-scene>
+
+</body>
+</html>
